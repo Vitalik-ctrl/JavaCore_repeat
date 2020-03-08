@@ -1,5 +1,9 @@
 package Lesson_2;
 
+//  Calculate salary for a given rate per hour, for a given number of days
+
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -20,18 +24,33 @@ public class Task2 {
         System.out.println("If you work 8 hours a day, enter 'Yes' " +
                 "\n" + "If you don't, enter your count of hours: ");
         String hoursString = bufferedReader.readLine();
-        if(hoursString.equals("Yes")){
+        if (hoursString.equals("Yes")) {
             int result = salaryInt * daysInt * hoursOnAvarage;
             System.out.println("Your salary: " + result);
-        } else{
+        } else {
             int hoursInt = Integer.parseInt(hoursString);
-            if(hoursInt > 22 ){
-                System.out.println("Sorry, but you can't work 22 hours and more a day! It's impossible!");
-            }if(hoursInt <= 22) {
+            while (hoursInt > 22) {
+                System.out.println("Sorry, but you can't work 22 hours and more a day! It's impossible! Enter again: ");
+                String hourseString = bufferedReader.readLine();
+                int hourseInt = Integer.parseInt(hourseString);
+                if (hourseInt < 22) {
+                    int result3 = salaryInt * daysInt * hourseInt;
+                    System.out.println("Your salary: " + result3);
+                    break;
+                }
+
+            }
+            if (hoursInt < 22) {
                 int result2 = salaryInt * daysInt * hoursInt;
                 System.out.println("Your salary: " + result2);
             }
-        }
 
+
+        }
     }
 }
+
+
+
+//Someone tell me please, how to make this code more concise.
+
