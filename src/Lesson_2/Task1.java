@@ -1,4 +1,4 @@
-package Lesson2;
+package Lesson_2;
 
 //The variables a and b contain the positive lengths of the cathets of the right triangle.
 // Calculate and display the area of ​​the triangle and its perimeter.
